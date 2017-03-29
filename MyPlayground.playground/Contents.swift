@@ -1,12 +1,15 @@
-//: Playground - noun: a place where people can play
-
-import UIKit
-
-//for character in "Dog!🐶".characters {
-//    print(character)
-//}
 
 
-let exclamationMark = "!"
+var highScore:Int
 
+var loadedScore:Int? =  1000
 
+if let okScore = loadedScore{
+    highScore = okScore
+}else{
+    highScore = 0
+}
+
+highScore = loadedScore != nil ? loadedScore! : 0
+
+highScore = loadedScore ?? 0
