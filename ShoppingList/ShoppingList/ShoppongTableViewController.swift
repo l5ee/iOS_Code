@@ -9,15 +9,96 @@
 import UIKit
 
 class ShoppongTableViewController: UITableViewController {
-
+    
+    var shoppingItems = [String]()
+    @IBAction func addItem(_ sender: UIBarButtonItem) {
+        popUpAlertWithDefault(nil){
+            (success, result) in
+            if success == true {
+                if let okResult = result {
+                    self.shoppingItems.append(okResult)
+                    //tableView.reloadData()
+                    let insertInfoAtThisIndexPath = IndexPath(row: self.shoppingItems.count - 1, section: 0)
+                    self.tableView.insertRows(at: [insertInfoAtThisIndexPath], with: .left)
+                    self.saveList()
+                }
+            }
+        }
+        
+    }
+    
+    // 存档
+    func saveList() {
+        UserDefaults.standard.set(shoppingItems, forKey: "list")
+        UserDefaults.standard.synchronize()
+    }
+    //读档
+    func loadList() {
+        if let okList = UserDefaults.standard.stringArray(forKey: "list") {
+            shoppingItems = okList
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        
+        popUpAlertWithDefault(shoppingItems[indexPath.row]){
+            (success, result) in
+            if success == true {
+                if let okResult = result {
+                    self.shoppingItems[indexPath.row] = okResult
+                    tableView.reloadData()
+                    self.saveList()
+                }
+            }
+        }
+    }
+    //删除Item
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            shoppingItems.remove(at: indexPath.row)
+            saveList()
+            tableView.reloadData()
+        }
+    }
+    
+    typealias  AddItemClosure = (Bool,String?)->()
+    
+    func popUpAlertWithDefault(_ defaultValue:String?, withCompletionHandler handler: @escaping AddItemClosure) {
+        let alert = UIAlertController(title: "添加新物品", message: nil, preferredStyle: .alert)
+        alert.addTextField(configurationHandler: {
+            (textfield) in
+            textfield.placeholder = "在这添加一个新的物品"
+            textfield.text = defaultValue
+        })
+        let okAction = UIAlertAction(title: "确定", style: .default, handler: {
+            (action) in
+            //按下按钮后做的事情
+            //拿出文字输入框的文字
+            if let inputText = alert.textFields?[0].text {
+                if inputText != "" {
+                    handler(true, inputText)
+                    
+                }else {
+                    handler(false, nil)
+                }
+            }
+        
+        })
+        let cancelAction = UIAlertAction(title: "取消", style: .default, handler: {
+            (action) in
+            handler(false, nil)
+        })
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        loadList()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +110,23 @@ class ShoppongTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return shoppingItems.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+
+        cell.textLabel?.text = shoppingItems[indexPath.row]
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
