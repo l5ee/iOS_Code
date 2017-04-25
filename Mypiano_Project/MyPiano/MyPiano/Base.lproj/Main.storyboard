@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyPiano" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXc-Mh-D2g" customClass="SpringButton" customModule="MyPiano" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="167"/>
+                                <color key="backgroundColor" red="0.89019608500000003" green="0.94901961089999998" blue="0.99215686319999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cg4-jr-LhO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6K-Tg-BVN" customClass="SpringButton" customModule="MyPiano" customModuleProvider="target">
+                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="167"/>
+                                <color key="backgroundColor" red="0.73333334920000004" green="0.87058824300000004" blue="0.98431372640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gtS-ry-7tu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZj-Zr-wST" customClass="SpringButton" customModule="MyPiano" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="167" width="187.5" height="166.5"/>
+                                <color key="backgroundColor" red="0.5647059083" green="0.79215687509999999" blue="0.97647058959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e7D-wQ-Ch2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8y-5t-PXx" customClass="SpringButton" customModule="MyPiano" customModuleProvider="target">
+                                <rect key="frame" x="187" y="167" width="187.5" height="166.5"/>
+                                <color key="backgroundColor" red="0.39215686919999998" green="0.70980393890000004" blue="0.96470588450000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G05-4s-GB7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGR-r7-uRC" customClass="SpringButton" customModule="MyPiano" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="333" width="187.5" height="167"/>
+                                <color key="backgroundColor" red="0.2588235438" green="0.64705884459999996" blue="0.96078431610000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WS0-l6-xvH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqR-3g-ftA" customClass="SpringButton" customModule="MyPiano" customModuleProvider="target">
+                                <rect key="frame" x="187.5" y="333.5" width="187.5" height="167"/>
+                                <color key="backgroundColor" red="0.1294117719" green="0.58823531870000001" blue="0.9529411793" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DFf-9t-LgG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXo-dO-6R0" customClass="SpringButton" customModule="MyPiano" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="500.5" width="187.5" height="166.5"/>
+                                <color key="backgroundColor" red="0.1176470593" green="0.53333336109999996" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Kq-Xg-Aea"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oa-0u-sIk" customClass="SpringButton" customModule="MyPiano" customModuleProvider="target">
+                                <rect key="frame" x="187.5" y="500.5" width="187.5" height="166.5"/>
+                                <color key="backgroundColor" red="0.098039217289999994" green="0.46274510029999999" blue="0.82352942230000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeInUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MY7-Vp-S0z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="g8y-5t-PXx" firstAttribute="height" secondItem="f6K-Tg-BVN" secondAttribute="height" id="0WM-eZ-Wlk"/>
+                            <constraint firstItem="GqR-3g-ftA" firstAttribute="height" secondItem="g8y-5t-PXx" secondAttribute="height" id="1zB-iF-mnH"/>
+                            <constraint firstItem="mXc-Mh-D2g" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:4" id="678-yw-0uU"/>
+                            <constraint firstItem="mXc-Mh-D2g" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9jT-SB-36L"/>
+                            <constraint firstAttribute="trailing" secondItem="3oa-0u-sIk" secondAttribute="trailing" id="ASB-PX-5xw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wXo-dO-6R0" secondAttribute="bottom" id="DZ3-iI-VhZ"/>
+                            <constraint firstItem="g8y-5t-PXx" firstAttribute="width" secondItem="f6K-Tg-BVN" secondAttribute="width" id="DeM-C5-YX2"/>
+                            <constraint firstItem="mXc-Mh-D2g" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="DwL-SB-JsD"/>
+                            <constraint firstItem="f6K-Tg-BVN" firstAttribute="height" secondItem="mXc-Mh-D2g" secondAttribute="height" id="EoI-dE-oF7"/>
+                            <constraint firstItem="3oa-0u-sIk" firstAttribute="width" secondItem="wXo-dO-6R0" secondAttribute="width" id="JAA-5R-9LV"/>
+                            <constraint firstItem="GqR-3g-ftA" firstAttribute="width" secondItem="g8y-5t-PXx" secondAttribute="width" id="Lxy-Sc-iht"/>
+                            <constraint firstItem="GqR-3g-ftA" firstAttribute="trailing" secondItem="g8y-5t-PXx" secondAttribute="trailing" id="Pa3-Ua-7NB"/>
+                            <constraint firstItem="wXo-dO-6R0" firstAttribute="top" secondItem="aGR-r7-uRC" secondAttribute="bottom" id="QAy-DF-eM7"/>
+                            <constraint firstItem="aGR-r7-uRC" firstAttribute="leading" secondItem="WZj-Zr-wST" secondAttribute="leading" id="QBC-IX-a1c"/>
+                            <constraint firstItem="wXo-dO-6R0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qpg-u9-ck3"/>
+                            <constraint firstItem="f6K-Tg-BVN" firstAttribute="width" secondItem="mXc-Mh-D2g" secondAttribute="width" id="Ssf-pn-gza"/>
+                            <constraint firstItem="WZj-Zr-wST" firstAttribute="top" secondItem="mXc-Mh-D2g" secondAttribute="bottom" id="T4B-mE-EGT"/>
+                            <constraint firstItem="wXo-dO-6R0" firstAttribute="top" secondItem="aGR-r7-uRC" secondAttribute="bottom" id="U5m-K3-073"/>
+                            <constraint firstItem="WZj-Zr-wST" firstAttribute="height" secondItem="mXc-Mh-D2g" secondAttribute="height" id="VYd-aH-ihm"/>
+                            <constraint firstAttribute="trailing" secondItem="f6K-Tg-BVN" secondAttribute="trailing" id="VmM-fH-f8Y"/>
+                            <constraint firstItem="GqR-3g-ftA" firstAttribute="top" secondItem="g8y-5t-PXx" secondAttribute="bottom" id="XCd-yI-f8J"/>
+                            <constraint firstItem="wXo-dO-6R0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="Yak-WD-J8F"/>
+                            <constraint firstItem="g8y-5t-PXx" firstAttribute="top" secondItem="f6K-Tg-BVN" secondAttribute="bottom" id="a86-6B-4dl"/>
+                            <constraint firstItem="WZj-Zr-wST" firstAttribute="leading" secondItem="mXc-Mh-D2g" secondAttribute="leading" id="bzP-zg-VB8"/>
+                            <constraint firstItem="WZj-Zr-wST" firstAttribute="width" secondItem="mXc-Mh-D2g" secondAttribute="width" id="eNh-v9-Yly"/>
+                            <constraint firstAttribute="trailing" secondItem="g8y-5t-PXx" secondAttribute="trailing" id="hgf-LN-iMR"/>
+                            <constraint firstItem="f6K-Tg-BVN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="j7w-gT-KK2"/>
+                            <constraint firstAttribute="bottom" secondItem="3oa-0u-sIk" secondAttribute="bottom" id="k9s-sP-H0D"/>
+                            <constraint firstItem="aGR-r7-uRC" firstAttribute="top" secondItem="WZj-Zr-wST" secondAttribute="bottom" id="mes-Hq-znA"/>
+                            <constraint firstItem="3oa-0u-sIk" firstAttribute="top" secondItem="GqR-3g-ftA" secondAttribute="bottom" id="omC-3K-Xu4"/>
+                            <constraint firstItem="mXc-Mh-D2g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qa0-ah-cMV"/>
+                            <constraint firstItem="aGR-r7-uRC" firstAttribute="width" secondItem="WZj-Zr-wST" secondAttribute="width" id="ujt-pu-oTu"/>
+                            <constraint firstItem="aGR-r7-uRC" firstAttribute="height" secondItem="WZj-Zr-wST" secondAttribute="height" id="ww9-3d-4XM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outletCollection property="playSound" destination="mXc-Mh-D2g" collectionClass="NSMutableArray" id="QiV-C2-5tH"/>
+                        <outletCollection property="playSound" destination="f6K-Tg-BVN" collectionClass="NSMutableArray" id="jSs-ka-lqn"/>
+                        <outletCollection property="playSound" destination="WZj-Zr-wST" collectionClass="NSMutableArray" id="wPe-LU-ZIa"/>
+                        <outletCollection property="playSound" destination="g8y-5t-PXx" collectionClass="NSMutableArray" id="pjL-Qa-7oR"/>
+                        <outletCollection property="playSound" destination="aGR-r7-uRC" collectionClass="NSMutableArray" id="cVL-Zg-xEe"/>
+                        <outletCollection property="playSound" destination="GqR-3g-ftA" collectionClass="NSMutableArray" id="Trq-bb-Z0f"/>
+                        <outletCollection property="playSound" destination="wXo-dO-6R0" collectionClass="NSMutableArray" id="70k-yg-It5"/>
+                        <outletCollection property="playSound" destination="3oa-0u-sIk" collectionClass="NSMutableArray" id="MYw-2A-UWj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
