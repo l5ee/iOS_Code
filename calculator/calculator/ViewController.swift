@@ -18,10 +18,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //数字按钮描边
         for i in 0..<caculatorButton.count {
             caculatorButton[i].layer.borderColor = UIColor(colorLiteralRed: 0.08, green: 0.49, blue: 0.98, alpha: 1).cgColor
-            caculatorButton[i].layer.borderWidth = 1
+            caculatorButton[i].layer.borderWidth = 0.5
         }
     }
     
@@ -29,25 +29,52 @@ class ViewController: UIViewController {
         let digit = sender.currentTitle!
         if userIsInTheMiddleOfTyping {
             
-            if digit == "AC" {
+            switch digit {
+            case "AC":
                 display.text = "0"
-            }else {
-                let currentlyInDisplay = display.text!
-                display.text = currentlyInDisplay + digit
+            case ".":
+                if display.text!.contains(".") == false {
+                    let currentlyInDisplay = display.text!
+                    display.text = currentlyInDisplay + digit
+                }
+
+            default:
+                if (display.text?.characters.count)! <= 10 {
+                    if display.text! == "0" {
+                        display.text = digit
+                    } else {
+                        let currentlyInDisplay = display.text!
+                        display.text = currentlyInDisplay + digit
+                    }
+                }
+                
+
             }
+            
+            
             
             
         } else {
-            if digit == "AC" {
+            switch digit {
+            case "AC":
                 display.text = "0"
-            }else {
+            case ".":
+                let currentlyInDisplay = display.text!
+                display.text = currentlyInDisplay + digit
+            case "0":
+                display.text = "0"
+            default:
                 display.text = digit
-                userIsInTheMiddleOfTyping = true
+                
             }
-            
+            userIsInTheMiddleOfTyping = true
         }
         
     }
+    
+    
+    
+    
     var displayValue: Double {
         get {
             return Double(display.text!)!
