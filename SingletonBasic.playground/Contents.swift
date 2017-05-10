@@ -1,32 +1,16 @@
-class DataController {
+class DataController{
+    //static 变成了类的属性
     static let name = "David"
-    var colorArray = ["red","green","blue"]
+    var colorArray = ["red", "green", "blue"]
+    //class 变成了类别方法
     class func sayhello() {
-        print("Hello Everybody")
+        print("Hello Everybody!")
     }
+    //private 就无法再外面呼叫这个方法了
     private init() {
-        
     }
+    //单例模式
     static let shared = DataController()
 }
 
-
-DataController.shared.colorArray[0] = "pink"
-
-protocol ApplicationDelegate {
-    func finishedLaunching()
-}
-
-class Application {
-    static let shared = Application()
-    private init() {
-        
-    }
-    var delegate: ApplicationDelegate?
-}
-
-class AppDelegate:ApplicationDelegate{
-    func finishedLaunching() {
-        print("finishedLaunching")
-    }
-}
+DataController.shared
